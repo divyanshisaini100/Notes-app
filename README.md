@@ -26,7 +26,7 @@ This project is intended to deepen my understanding of JS and DOM concepts.
 
   - firstly, when you say make some changes in the remote repository (main project) directly - it doesn't automatically reflect on your codespace (tho it is in cloud but works as a local environment)
   - git push - to reflect codespace latest commit in main remote repository
-  - git pull - to reflect the remote repository's latest commit in codespace
+  - git pull - (fetches + merges) to reflect the remote repository's latest commit in codespace
   - git fetch - tells git that a new version exists but just download the changes from origin/main or remote repository but don't change the files - keep them intact (you can use this to review changes before integrating or incase of conflicts if multiple members working in the team)
   
 - main vs origin/main
