@@ -1,0 +1,160 @@
+*{  
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: black;
+}
+.popup{
+
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+.popup-content{
+    display: flex;
+    flex-direction: column;
+    /* background-color: rgb(2, 2, 58); */
+    background-color: #0D0D1A;
+    color: #c43784;
+    box-shadow: 0 0 20px #c43784;
+    border-radius: 10px;
+    position: relative;
+    z-index: 2;
+    /* background-color: white; */
+    width: 80%;
+    padding: clamp(10px, 3vw, 20px);
+    max-width: 400px;
+}
+.popup-content>h1{
+    font-family:  "Palatino Linotype", serif;
+    margin-bottom: clamp(10px, 4vw, 20px);
+}
+.popup-content>h3{
+    font-family:  "Palatino Linotype", serif;
+    margin-bottom: clamp(5px, 2vw, 10px);
+}
+#title, #content, #savebtn{
+    outline: none;
+    border: none;
+    color: #c43784;
+    background-color: #0D0D1A;
+    border: 1px solid #c43784;
+    border-radius: 10px;
+}
+
+textarea{
+    padding: clamp(5px, 3vw, 10px);
+    font-size: clamp(12px, 3vw, 20px);
+    display: block;
+
+    width: clamp(150px, 25vw, 280px);
+    height: clamp(120px, 20vh, 250px);
+
+    resize: none;
+}
+input, #savebtn{            
+     padding: clamp(5px, 3vw, 10px);
+     font-size: clamp(12px, 3vw, 20px);
+     
+}
+.input, .textarea, #savebtn{
+    margin: clamp(10px, 4vw, 20px);
+}
+#savebtn{
+    box-shadow: 0 0 20px #c43784;
+    border-radius: 10px;
+}
+
+.hidden{
+
+    display: none;
+}
+.flexbox{
+    /* position: relative; */
+    display: flex;
+    justify-content: space-between;
+    /* width: 100%; */
+    /* why not margin and padding instead? */
+    /* why margin still works? */
+    padding: clamp(10px, 4vw, 20px);
+    background-color: #0D0D1A;
+    color: #c43784;;
+    font-family:  "Palatino Linotype", serif;
+    box-shadow: 0 2px 8px #c43784;
+} 
+.add{
+    font-size: clamp(20px, 4vw, 30px);
+    font-family:  "Palatino Linotype", serif;
+    border: none;
+    color: #c43784;
+    background-color: #0D0D1A;
+    box-shadow: 2px 2px 8px #c43784;
+    padding: clamp(10px, 4vw, 20px);
+    border-radius: 5px;
+}
+#intro{
+    /* position: absolute;
+    top: 70%; */
+    margin-top: auto;
+    font-size: clamp(30px, 4vw, 40px);
+    color: #c43784;
+    text-shadow: 4px 10px 30px #c43784;    
+
+}
+.notes_list{
+    padding: clamp(10px, 3vw, 20px);
+    background-color: black;
+    
+}
+.notes{
+    display: flex;
+    justify-content: space-between;
+    background-color: #0D0D1A;
+    position: relative;
+    border: 1px solid #c43784;
+    margin: clamp(10px, 2vw, 20px);
+    border-radius: 10px;
+    height: clamp(60px, 10vh, 100px);
+    color: #c43784;
+    padding: clamp(10px, 3vw, 20px);
+}
+.view>small{
+    padding: clamp(5px, 2vw, 10px);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}  
+.notes>h5{
+    margin-left: clamp(7px, 2vw, 15px);
+    font-size: clamp(7px, 2vw, 15px);
+    font-weight: lighter;
+}  
+.edit_btn, .delete_btn{
+    width: clamp(24px, 4vw, 30px);
+    height: auto;
+    margin: clamp(5px, 3vw, 10px);
+}
+.tools{
+    display: flex;
+    align-items: flex-end;
+}
+.tools>button{    
+    border: none;
+    outline: none;
+    background-color: #0D0D1A;
+    border: 1px solid #c43784;
+    border-radius: 10px;
+    margin: clamp(5px, 3vw, 10px);
+}
+/* --------------------------- */
