@@ -11,7 +11,7 @@ This project is intended to deepen my understanding of JS and DOM concepts.
 - BRANCHES
 
   - Branches are simply different versions of code
-  - a practical example of why branches are used in first place. Say we made a project - fully funcitonal. We wanna add a login-page. BUT without breaking the whole code (INCASE SOMETHING GOES WRONG). For such experimentation - we'll make a new branch say "login-page" 
+  - a practical example of why branches are used in first place. Say we made a project - fully funcitonal. We want to add a login-page. BUT without breaking the whole code (just incase something goes wrong). For such experimentation - we'll make a new branch say "login-page" 
   - Creating a new branch automatically gets the latest commit of the current branch into the new one
   - it doesn't really COPY the whole code but POINTS to 'the same code state' as previous branch (in which you created this new branch)
 
