@@ -120,21 +120,17 @@ input, #savebtn{
 .notes{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     background-color: #0D0D1A;
     position: relative;
     border: 1px solid #c43784;
     margin: clamp(10px, 2vw, 20px);
     border-radius: 10px;
-    height: clamp(60px, 10vh, 100px);
+    height: clamp(80px, 10vh, 150px);
     color: #c43784;
-    padding: clamp(10px, 3vw, 20px);
+    padding: clamp(50px, 3vw, 150px);
 }
-.view>small{
-    padding: clamp(5px, 2vw, 10px);
-    position: absolute;
-    bottom: 0;
-    right: 0;
-}  
+
 .notes>h5{
     margin-left: clamp(7px, 2vw, 15px);
     font-size: clamp(7px, 2vw, 15px);
@@ -143,11 +139,20 @@ input, #savebtn{
 .edit_btn, .delete_btn{
     width: clamp(24px, 4vw, 30px);
     height: auto;
+    aspect-ratio: 1/1; 
+    object-fit: contain;
     margin: clamp(5px, 3vw, 10px);
 }
 .tools{
     display: flex;
-    align-items: flex-end;
+    align-items: center;
+    justify-content: center;
+}
+.note-end{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: clamp(5px, 3vw, 10px);
 }
 .tools>button{    
     border: none;

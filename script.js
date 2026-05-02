@@ -4,6 +4,7 @@ const addbtn = document.querySelectorAll(".add");
 
 const popup = document.querySelector(".popup");
 
+
 let notesArray = JSON.parse(localStorage.getItem("notes")) || [];
 
 const container = document.querySelector(".notes_list");
@@ -24,6 +25,7 @@ function renderNotes(){
 // });
 document.addEventListener("click", (e)=>{
     if(e.target.closest(".add")){
+        console.log("Add button clicked")
         editNotesId = null;
         popup.classList.remove("hidden");
     }
@@ -78,12 +80,17 @@ function addNoteToUI(note){
     <div class="view">
     <h3>${note.title.toUpperCase()}</h3>
     <h5>${firstLine}...</h5>
-    <small>Last Edited: ${note.time} </small>
+    
     </div>
+    <div class="note-end">
     <div class="tools">
       <button type="button" class="edit1"><img src="pen.png" alt="-" class="edit_btn"></button>
       <button type="button" class="delete1"><img src="bin.png" alt="-" class="delete_btn"></button>
     </div>    
+    <div class="lastedited">
+      <small>Last Edited: ${note.time} </small>
+    </div>
+    </div>
     `;
     div.classList.add("notes");
 
@@ -94,6 +101,9 @@ function addNoteToUI(note){
 document.addEventListener("click", (e)=>{
 
    if(e.target.closest(".delete1")){
+
+    console.log("Delete Button Clicked");
+
     const note = e.target.closest(".notes");
     const id = Number(note.dataset.id);
 
@@ -106,12 +116,20 @@ document.addEventListener("click", (e)=>{
    }
 
    if(e.target.closest(".edit1")){
+
     const note = e.target.closest(".notes");
+
     const id = Number(note.dataset.id);
+
+    console.log("Edit Button Clicked");
+    console.log("ID : ", id);
+    console.log("notesArray : ", notesArray);
+
+   
 
     editNotesId = id;
     
-    const n = notesArray.find(n => n.id === id);
+    let n = notesArray.find(note => note.id === id);
 
     const title_selected = document.getElementById("title");
     const content_selected = document.getElementById("content");
