@@ -14,9 +14,21 @@ renderNotes();
 function renderNotes(){
     
     container.innerHTML = "";
-    notesArray.forEach(note => {
+
+    // console.log("length of notesArray is: ", notesArray.length);
+
+    if(notesArray.length===0){
+        const writing = document.createElement("h3");
+        writing.classList.add("no_notes");
+        writing.innerText = "Add your first note..."
+
+        container.appendChild(writing);
+    }
+    else {
+        notesArray.forEach(note => {
         addNoteToUI(note);
-    });
+     });
+    }
 }
 // addbtn is a NODELIST so addEventListener won't work!
 
@@ -41,7 +53,14 @@ savebtn.addEventListener("click", ()=>{
     const time = new Date().toLocaleString();
     
     if(editNotesId !== null){
+
          const note = notesArray.find(n => n.id===editNotesId);
+
+         if(content.trim()==="" && title.trim()==="") {
+            popup.classList.add("hidden");
+            return;
+        }
+        
          if(!note) return;
          note.title = title;
          note.content = content;
@@ -54,12 +73,18 @@ savebtn.addEventListener("click", ()=>{
     else {
         const note = {id, title, content, time};
 
+        if(content.trim()==="" && title.trim()==="") {
+            popup.classList.add("hidden"); return;
+            return;
+        }
+
         notesArray.push(note);
 
         // title = "";
         // content = "";
         // time = "";
     }
+
     document.querySelector("#title").value = "";
     document.querySelector("#content").value = "";
        
@@ -71,6 +96,7 @@ savebtn.addEventListener("click", ()=>{
 })
 
 function addNoteToUI(note){
+    
     
     const div = document.createElement("div");
     div.dataset.id = note.id;
@@ -84,17 +110,18 @@ function addNoteToUI(note){
     </div>
     <div class="note-end">
     <div class="tools">
-      <button type="button" class="edit1"><img src="pen.png" alt="-" class="edit_btn"></button>
-      <button type="button" class="delete1"><img src="bin.png" alt="-" class="delete_btn"></button>
+    <button type="button" class="edit1"><img src="pen.png" alt="-" class="edit_btn"></button>
+    <button type="button" class="delete1"><img src="bin.png" alt="-" class="delete_btn"></button>
     </div>    
     <div class="lastedited">
-      <small>Last Edited: ${note.time} </small>
+    <small>Last Edited: ${note.time} </small>
     </div>
     </div>
     `;
     div.classList.add("notes");
 
     container.appendChild(div);
+    
 
 }
 

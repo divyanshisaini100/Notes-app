@@ -128,7 +128,7 @@ input, #savebtn{
     border-radius: 10px;
     height: clamp(80px, 10vh, 150px);
     color: #c43784;
-    padding: clamp(50px, 3vw, 150px);
+    padding: clamp(10px, 3vw, 20px);
 }
 
 .notes>h5{
@@ -161,5 +161,26 @@ input, #savebtn{
     border: 1px solid #c43784;
     border-radius: 10px;
     margin: clamp(5px, 3vw, 10px);
+}
+.no_notes{
+   
+    color: #c43784;
+    font-size: clamp(10px, 4vw, 20px);
+    
+    font-weight: lighter;
+    
+}
+.addimg{
+    width: 100%;
+    max-width: 50px;
+    object-fit: contain;
+    aspect-ratio: 1/1;
+    height: auto;
+    margin: clamp(5px, 2vw, 10px);
+}
+.addbtn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 /* --------------------------- */
