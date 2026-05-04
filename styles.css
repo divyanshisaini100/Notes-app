@@ -170,9 +170,9 @@ input, #savebtn{
     font-weight: lighter;
     
 }
-.addimg{
-    width: 100%;
-    max-width: 50px;
+.addimg, #searchimg{
+    width: clamp(30px, 3vw, 50px);
+    height: auto;
     object-fit: contain;
     aspect-ratio: 1/1;
     height: auto;
@@ -182,5 +182,23 @@ input, #savebtn{
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+.search{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: clamp(4px, 1vw, 10px);
+}
+.searchimg{
+    width: clamp(40px, 2vw, 60px);
+}
+#searchbar{
+    border: none;
+    border-radius: 5px;
+}
+#searchbar:focus {
+    border: 1px solid #c43784;
+    outline: none;
+    box-shadow: 0 0 10px #c43784;
 }
 /* --------------------------- */
